@@ -40,16 +40,21 @@ def send_byte(byte):
 if __name__ == '__main__': 
   setup() 
   send_byte(0b111111111111111111111111)
+  print("all white")
   # sleep, just so that you have a chance to see final output
-  time.sleep(1)
+  time.sleep(5)
   send_byte(0b111111110000000000000000)#red
-  time.sleep(1)
+  print("all red")
+  time.sleep(5)
   send_byte(0b000000001111111100000000)#blue
-  time.sleep(1)
+  print("all blue")
+  time.sleep(5)
   send_byte(0b000000000000000011111111)#green
-  time.sleep(1)
+  print("all green")
+  time.sleep(5)
   send_byte(0b101010101010101010101010)#every other LED whie
-  time.sleep(1)
+  time.sleep(5)
   send_byte(0b010101010101010101010101)
-  time.sleep(1)
+  time.sleep(5)
+  send_byte(0b000000000000000000000000)
   GPIO.cleanup()
